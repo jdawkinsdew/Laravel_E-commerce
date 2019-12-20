@@ -1,0 +1,134 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+// List sortable
+.list-sortable {
+	list-style: none;
+	padding-left: 0;
+
+	> li {
+		position: relative;
+	}
+
+	.sortable-drag {
+		position: absolute;
+		top: px-to-rem( 15px );
+		right: px-to-rem( 15px );
+		font-size: px-to-rem( 16px );
+		line-height: 1;
+		cursor: pointer;
+
+		&:before {
+			content: '\f0c9';
+			font-family: 'FontAwesome';
+		}
+	}
+}
+
+.sortable-completed {
+	.sortable-drag {
+		&:before {
+			content: '\f00d';
+		}
+	}
+}
+
+// Modifiers
+// List bordered
+.list-sortable-bordered {
+	border: 1px solid $gray-200;
+
+	> li {
+		padding: px-to-rem( 15px, 50px, 15px, 20px );
+	}
+
+	> li + li {
+		border-top: 1px solid $gray-200;
+	}
+
+	.sortable-drag {
+		top: px-to-rem( 16px );
+		color: rgba( $body-color, .7 );
+	}
+
+	// Checkbox color
+	.custom-checkbox {
+		.custom-control-input {
+			&:focus ~ .custom-control-label::before {
+				border-color: $body-color;
+				background-color: transparent;
+			}
+
+			&:checked ~ .custom-control-label::before,
+			&:active ~ .custom-control-label::before {
+				border-color: $body-color;
+				background-color: $body-color;
+			}
+		}
+
+		.custom-control-label::before {
+			border-color: $body-color;
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		.custom-control-label {
+			color: $body-color;
+		}
+	}
+}
+
+.list-sortable-title + .list-sortable-bordered,
+.list-sortable-bordered + .list-sortable-title {
+	margin-top: px-to-rem( 16px );
+}
+
+// List divider
+.list-sortable-divider {
+	> li {
+		padding: px-to-rem( 13px, 50px, 13px, 20px );
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 4px;
+			left: 0;
+			bottom: 4px;
+			width: 3px;
+			background-color: $gray-200;
+		}
+	}
+
+	.sortable-drag {
+		top: px-to-rem( 10px );
+	}
+}
+
+.list-sortable-title-divider {
+	padding: px-to-rem( 10px );
+}
+
+.list-sortable-title + .list-sortable-divider,
+.list-sortable-divider + .list-sortable-title,
+.list-sortable-divider + .list-sortable-divider,
+.list-sortable-divider > li + li {
+	border-top: 1px solid $gray-200;
+}
+
+.list-sortable-divider + .list-sortable-title {
+	margin-top: 0;
+}
+
+// Colors
+@each $color, $value in $theme-colors {
+	.list-sortable-divider {
+		.list-sortable-item-#{$color} {
+			&:before {
+				background-color: $value;
+			}
+		}
+	}
+}

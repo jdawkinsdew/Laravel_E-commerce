@@ -1,0 +1,42 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+.icon-box {
+	display: block;
+	padding: px-to-rem( 15px, 20px );
+	color: $gray-500;
+	background-color: $gray-100;
+	border: 2px dashed $gray-300;
+	cursor: pointer;
+	transition: .2s;
+
+	&:hover,
+	&:focus {
+		border-color: $gray-600;
+	}
+
+	&.active {
+		background-color: $white;
+	}
+
+	&:hover,
+	&:focus,
+	&.active {
+		.icon-box-icon {
+			color: $success;
+		}
+	}
+
+	* + p {
+		margin-top: px-to-rem( 8px );
+	}
+}
+
+.icon-box-icon {
+	font-size: 2.5rem;
+	line-height: 1;
+	transition: .2s;
+}

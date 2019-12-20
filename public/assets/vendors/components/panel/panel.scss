@@ -1,0 +1,267 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins/group";
+
+$panel-spacer-y:     px-to-rem( 18px );
+$panel-spacer-x:     px-to-rem( 30px );
+$panel-cap-bg:       $gray-200;
+$panel-border-width: 1px;
+$panel-border-color: darken( $panel-cap-bg, 2% );
+$panel-bg:           $white;
+
+// Base styles
+.panel {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: $panel-bg;
+	background-clip: border-box;
+}
+
+.panel-body {
+	flex: 1 1 auto;
+	padding: px-to-rem( 20px );
+	border: $panel-border-width solid $panel-border-color;
+
+	&-border {
+		border: 3px solid $panel-cap-bg;
+	}
+
+	&-bg {
+		color: color-yiq( lighten( $panel-cap-bg, 10% ) );
+		background-color: lighten( $panel-cap-bg, 10% );
+	}
+}
+
+.panel-body + .panel-body {
+	border-top: none;
+}
+
+.panel-header {
+	padding: px-to-rem( 15px, 20px );
+	background-color: $panel-cap-bg;
+}
+
+.panel-title {
+	font-size: px-to-rem( 17px );
+
+	> * {
+		vertical-align: middle;
+	}
+}
+
+.panel-icon {
+	font-size: inherit;
+	padding-right: 0.6em;
+}
+
+.panel-menu {
+	padding: px-to-rem( 20px );
+	background-color: darken( $panel-bg, 7% );
+}
+
+.panel-footer {
+	padding: px-to-rem( 20px );
+	background-color: darken( $panel-bg, 8% );
+}
+
+@include media-breakpoint-up(xl) {
+	.panel-header {
+		padding: $panel-spacer-y $panel-spacer-x;
+	}
+
+	.panel-body,
+	.panel-menu,
+	.panel-footer {
+		padding: $panel-spacer-y;
+	}
+}
+
+// Offsets
+.btn-block + .panel {
+	margin-top: px-to-rem( 15px );
+}
+
+h4 + .panel {
+	margin-top: px-to-rem( 20px );
+}
+
+* + .panel {
+	margin-top: px-to-rem( 13px );
+}
+
+.panel + .panel {
+	margin-top: px-to-rem( 30px );
+}
+
+// Header navs
+.panel-nav {
+	.panel-header {
+		padding: 0;
+	}
+
+	.nav {
+		flex-wrap: nowrap;
+		overflow-x: auto;
+	}
+
+	.nav-item + .nav-item {
+		margin-left: -1px;
+	}
+
+	.nav-tabs .nav-link {
+		border-bottom: 0;
+	}
+
+	.panel-title {
+		padding: px-to-rem( 8px ) $panel-spacer-x;
+	}
+}
+
+// Modifiers
+.panel-border-top {
+	border-top: 5px solid $gray-300;
+}
+
+.panel-border-bottom {
+	border-bottom: 5px solid;
+}
+
+.panel-border-left {
+	border-left: 5px solid;
+}
+
+.panel-border-right {
+	border-right: 5px solid;
+}
+
+// Panel in the context of accordion
+.accordion {
+	$sizeX: 0.75rem;
+
+	overflow: hidden;
+
+	.panel {
+		border-radius: 0;
+	}
+
+	.panel-header {
+		position: relative;
+		padding-left: $sizeX * 2.5;
+	}
+
+	.panel + .panel {
+		margin-top: px-to-rem( 10px );
+	}
+
+	.collapse-link {
+		color: inherit;
+		transition: .2s;
+
+		&:before {
+			position: absolute;
+			left: $sizeX;
+			top: $panel-spacer-y;
+			transform: scale(.7);
+			font-family: 'FontAwesome';
+			font-size: inherit;
+			line-height: inherit;
+			font-weight: 400;
+			will-change: transform;
+			transition: transform .25s;
+		}
+
+		&:before {
+			content: '\f054';
+		}
+
+		&[aria-expanded="true"] {
+			&:before {
+				transform: scale(.7) rotate( 90deg );
+			}
+		}
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+}
+
+h5 + .accordion {
+	margin-top: px-to-rem( 15px );
+}
+
+// Panel in the context of timeline
+.panel-timeline {
+	margin: 0;
+	overflow: visible;
+}
+
+@include media-breakpoint-up( md ) {
+	.panel-timeline {
+		.panel-header {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 15px;
+				left: -5px;
+				transform: rotate(45deg);
+				width: 12px;
+				height: 12px;
+				background-color: inherit;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up( lg ) {
+	.timeline-left {
+		.panel-header {
+			&::before {
+				left: auto;
+				right: -5px;
+			}
+		}
+	}
+}
+
+// Color themes
+@each $color, $value in $theme-colors {
+	.panel-#{$color} {
+		.panel-header {
+			color: color-yiq( $value );
+			background-color: $value;
+			border-bottom-color: darken( $value, 5% );
+		}
+
+		.panel-body-bg {
+			color: color-yiq( lighten( $value, 10% ) );
+			background-color: lighten( $value, 10% );
+			border-color: lighten( $value, 10% );
+		}
+
+		.panel-body-border {
+			border-color: $value;
+		}
+
+		.panel-menu,
+		.panel-footer {
+			color: color-yiq( darken( $value, 5% ) );
+			background-color: darken( $value, 5% );
+			border-color: darken( $value, 10% );
+		}
+
+		.collapse-link {
+			color: color-yiq( $value );
+		}
+	}
+
+	.panel-border-#{$color} {
+		border-color: $value;
+	}
+}

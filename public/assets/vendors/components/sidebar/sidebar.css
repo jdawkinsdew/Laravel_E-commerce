@@ -1,0 +1,2 @@
+.sidebar {	position: fixed;	top: 60px;	bottom: 0;	right: 0;	transform: translateX(101%);	z-index: 14;	width: 280px;	transition: transform .2s ease-in-out;	background: #f5f5f5;	overflow: hidden;	overflow-y: overlay;	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);}.sidebar.active {	transform: translateX(0);}.sidebar-lg {	width: 320px;}
+/*# sourceMappingURL=sidebar.css.map */

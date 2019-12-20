@@ -1,0 +1,31 @@
+//- Main Navigation
+mixin navigation( menu, type )
+	if( !type )
+		ul.rd-navbar-nav&attributes( attributes )
+			each item in menu
+				if( item.heading )
+					li.rd-navbar-nav-item
+						.rd-navbar-title
+							span.rd-navbar-title-icon: span.fa-ellipsis-h
+							span.rd-navbar-title-text= item.heading
+				else
+					li.rd-navbar-nav-item( class= { active: item.active } )
+						a.rd-navbar-link( href= item.link )
+							if( item.icon )
+								span.rd-navbar-icon( class= item.icon )
+							span.rd-navbar-link-text= item.title
+
+						if( item.dropdown )
+							+navigation( item.dropdown, 'dropdown' )
+
+	else if( type === 'dropdown' )
+		ul.rd-navbar-dropdown
+			each item in menu
+				li.rd-navbar-dropdown-item( class= { active: item.active } )
+					a.rd-navbar-link( href= item.link )
+						if( item.icon )
+							span.rd-navbar-icon( class= item.icon )
+						= item.title
+
+					if( item.dropdown )
+						+navigation( item.dropdown, 'dropdown' )

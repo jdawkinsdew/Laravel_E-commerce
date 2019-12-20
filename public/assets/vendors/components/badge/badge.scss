@@ -1,0 +1,31 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+
+// Variables
+$badge-padding-y: .4em;
+$badge-padding-x: .7em;
+$badge-font-size: 77%;
+$badge-pill-padding-x: .85em;
+
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/badge";
+
+// badge context in navbar button
+.btn.btn-navbar-panel {
+	.badge{
+		position: absolute;
+		top: -6px;
+		left: auto;
+		right: -2px;
+		padding: 0;
+		width: 16px;
+		height: 16px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		font-size: 10px;
+		line-height: 16px;
+		transform: translate(0, 0);
+	}
+}

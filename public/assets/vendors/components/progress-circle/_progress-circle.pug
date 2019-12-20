@@ -1,0 +1,11 @@
+//- Progress Circle
+mixin progress-circle( data )
+	.progress-circle-wrap
+		.progress-counter-wrap
+			.progress-counter-value.h2
+				| +
+				span.progress-counter= data.count
+			.progress-title.h3!= data.title
+		svg.progress-circle( x='0', y='0', width='160', height='160', viewbox='0 0 160 160' )
+			circle.bg( cx=80, cy=80, r=66 )
+			circle.fg.clipped( cx=80, cy=80, r=66, style=`stroke: ${data.color}` )

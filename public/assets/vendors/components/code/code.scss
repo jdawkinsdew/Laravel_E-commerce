@@ -1,0 +1,18 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/code";
+
+code {
+	color: $red;
+	line-height: 1.2;
+}
+
+.code-bg {
+	padding: 0.2em 0.3em;
+	color: $red;
+	background-color: $gray-100;
+	@include border-radius( $border-radius );
+}

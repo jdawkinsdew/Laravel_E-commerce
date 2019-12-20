@@ -1,0 +1,155 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins/group";
+
+
+// Color variables
+$tpanel-color: $white;
+$tpanel-hcolor: $primary;
+$tpanel-bg: $gray-900;
+$tpanel-shadow: $black;
+$tpanel-border: $gray-200;
+
+
+// Base
+.template-panel {
+	position: fixed;
+	top: 20%;
+	right: 0;
+	transform: translateX(100%);
+	min-width: 200px;
+	transition: transform .2s ease-out;
+	filter: drop-shadow( 0px 0px 4px rgba( $tpanel-shadow, 0.3 ) );
+	background: $tpanel-bg;
+	color: $tpanel-color;
+
+	&.active {
+		transform: translateX(0);
+	}
+}
+
+.template-panel-heading {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 50px;
+	margin-left: -50px;
+	padding: 10px 20px 10px 70px;
+	border: solid rgba($tpanel-border, .2);
+	border-width: 1px 0 1px 1px;
+	font-weight: 400;
+	font-size: px-to-rem( 18px );
+	line-height: px-to-rem( 25px );
+	background: inherit;
+}
+
+.template-panel-switch {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border: none;
+	font-size: px-to-rem( 25px );
+	line-height: px-to-rem( 25px );
+	background: none;
+	color: inherit;
+
+	&::before {
+		animation: tps-rotation 10s linear infinite;
+	}
+}
+
+.template-panel-body {
+	padding: 15px 20px;
+	border: solid rgba($tpanel-border, .2);
+	border-width: 0 0 1px 1px;
+}
+
+.template-panel-list,
+.template-panel-item {
+	padding: 0;
+}
+
+.template-panel-item {
+	position: relative;
+}
+
+.template-panel-link {
+	display: inline-block;
+	font-size: px-to-rem( 16px );
+	line-height: 1.2;
+	color: inherit;
+
+	&:hover {
+		color: $tpanel-hcolor;
+
+		.template-panel-popup {
+			right: calc(100% + 20px);
+			opacity: 1;
+		}
+	}
+
+	&.active {
+		border-bottom: 1px solid;
+	}
+}
+
+.template-panel-popup {
+	position: absolute;
+	top: 50%;
+	right: calc(100% + 70px);
+	transform: translateY(-50%);
+	display: block;
+	width: 400px;
+	padding: 7px;
+	border: 1px solid rgba($tpanel-border, .2);
+	background-color: $tpanel-bg;
+	opacity: 0;
+	transition: .3s ease-out;
+	pointer-events: none;
+	will-change: transform;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translate(50%, -50%) rotate( 45deg );
+		width: 10px;
+		height: 10px;
+		border-style: inherit;
+		border-color: inherit;
+		border-width: 1px 1px 0 0;
+		background: inherit;
+	}
+}
+
+.template-panel-preview {
+	width: 100%;
+	height: auto;
+}
+
+.template-panel-group {
+	display: flex;
+	@include group( 8px );
+}
+
+* + .template-panel-list {
+	margin-top: 15px;
+}
+
+* + .template-panel-item {
+	margin-top: 10px;
+}
+
+@keyframes tps-rotation {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

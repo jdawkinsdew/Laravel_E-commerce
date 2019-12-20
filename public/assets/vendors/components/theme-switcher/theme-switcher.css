@@ -1,0 +1,2 @@
+.theme-switch {	position: relative;	display: block;	border: 13px solid;	border-color: #797b7c #797b7c #fff #fff;	border-radius: 0.2rem;	font-size: 1.0625rem;	line-height: 1;	background: none;	color: #fff;}.theme-switch::before {	position: absolute;	top: 50%;	left: 50%;	transform: translate(-50%, -50%);	text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);	opacity: 0;	transition: .2s;}.theme-switch:hover {	cursor: pointer;}.theme-switch.active::before {	opacity: 1;}
+/*# sourceMappingURL=theme-switcher.css.map */

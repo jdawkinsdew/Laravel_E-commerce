@@ -1,0 +1,17 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+.user-item {
+	.user-img {
+		border: 3px solid $gray-400;
+	}
+
+	.user-description {
+		display: block;
+	}
+
+	* + .user-title { margin-top: px-to-rem( 6px ); }
+}

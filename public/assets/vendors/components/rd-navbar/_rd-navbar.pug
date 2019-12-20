@@ -1,0 +1,152 @@
+include _navigation
+include ../alert/_alert
+
+mixin rd-navbar
+	//RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar
+			.rd-navbar-panel
+				.rd-navbar-panel-cell
+					button.btn.btn-navbar-panel.rd-navbar-sidebar-toggle( data-navigation-switch= true ): span.fa-bars
+
+				.rd-navbar-panel-cell.rd-navbar-panel-cell-fullscreen
+					button.btn.btn-navbar-panel( data-fullscreen='html' ): span.fa-arrows-alt
+
+				.rd-navbar-panel-cell.rd-navbar-panel-cell-search
+					.rd-navbar-sidebar-search
+						input.form-control( type='text', placeholder='Search' )
+
+				.rd-navbar-panel-center
+
+				.rd-navbar-panel-cell
+					button.btn.btn-navbar-panel( data-multi-switch!={
+						targets: '#subpanel-chat',
+						scope: '#subpanel-chat',
+						isolate: '[data-multi-switch]'
+					} )
+						span.fa-comments
+						span.badge.badge-danger ...
+					#subpanel-chat.rd-navbar-subpanel 
+						include _navbar-chat-widget
+
+				.rd-navbar-panel-cell
+					button.btn.btn-navbar-panel( data-multi-switch!={
+						targets: '#subpanel-notifications',
+						scope: '#subpanel-notifications',
+						isolate: '[data-multi-switch]'
+					} )
+						span.fa-bell
+						span.badge.badge-warning 2
+					#subpanel-notifications.rd-navbar-subpanel
+						.panel
+							.panel-header
+								h3.panel-title
+									span.panel-icon.fa-bell
+									span Notifications
+							.panel-body.p-2.scroller.scroller-vertical
+								.group-5
+									+alert( { close: true } ).alert-primary.alert-sm
+										span.alert-icon.fa-telegram
+										span Message
+									+alert( { close: true } ).alert-warning.alert-sm
+										span.alert-icon.fa-warning
+										span Warning
+									+alert( { close: true } ).alert-danger.alert-sm
+										span.alert-icon.fa-remove
+										span Error
+									+alert( { close: true } ).alert-success.alert-sm
+										span.alert-icon.fa-thumbs-up
+										span Success
+							.panel-footer.p-2
+								a.btn.btn-primary.btn-sm( href='alerts.html' ) See more
+
+				.rd-navbar-panel-cell
+					button.btn.btn-navbar-panel.dropdown-toggle( data-toggle='dropdown' ): span.fa-flag
+					.dropdown-menu
+						a.dropdown-item.d-flex.align-items-center( href='#' )
+							img.pr-1(src='images/image-07-14x11.jpg', width='14', height='11', alt='')
+							span France
+						a.dropdown-item.d-flex.align-items-center( href='#' )
+							img.pr-1(src='images/image-08-14x11.jpg', width='14', height='11', alt='')
+							span Germany
+						a.dropdown-item.d-flex.align-items-center( href='#' )
+							img.pr-1(src='images/image-10-14x11.jpg', width='14', height='11', alt='')
+							span Turkey
+						a.dropdown-item.d-flex.align-items-center( href='#' )
+							img.pr-1(src='images/image-11-14x11.jpg', width='14', height='11', alt='')
+							span USA
+
+				.rd-navbar-panel-cell.rd-navbar-panel-cell-user
+					.btn.btn-navbar-panel( data-multi-switch!={
+						targets: '#subpanel-user',
+						scope: '#subpanel-user',
+						isolate: '[data-multi-switch]'
+					} )
+						.media.align-items-center
+							img.rounded-circle(src='images/users/user-03-50x50.jpg', width='30', height='30', alt='')
+							.media-body.ml-2
+								p John Doe
+					#subpanel-user.rd-navbar-subpanel
+						.panel
+							.panel-header
+								.group-5.d-flex.flex-wrap.align-items-center
+									img.rounded.mr-2(src='images/users/user-03-50x50.jpg', width='50', height='50', alt='')
+									h3.panel-title John Doe
+							.panel-body.p-0.scroller.scroller-vertical
+								.list-group
+									a.list-group-item.rounded-0( href='#' )
+										.media.align-items-center
+											.pr-2
+												span.fa-user
+											.media-body
+												h5 My Profile
+									a.list-group-item.rounded-0( href='#' )
+										.media.align-items-center
+											.pr-2
+												span.fa-envelope-o
+											.media-body
+												h5 My Messages
+											.badge.badge-warning 12
+									a.list-group-item.rounded-0( href='#' )
+										.media.align-items-center
+											.pr-2
+												span.fa-rocket
+											.media-body
+												h5 My Activities
+									a.list-group-item.rounded-0( href='#' )
+										.media.align-items-center
+											.pr-2
+												span.fa-desktop
+											.media-body
+												h5 My Tasks
+											.badge.badge-success 05
+									a.list-group-item.rounded-0( href='#' )
+										.media.align-items-center
+											.pr-2
+												span.fa-line-chart
+											.media-body
+												h5 Billing
+							.panel-footer.p-2
+								.d-flex.align-items-center.justify-content-between
+									a.btn.btn-danger.btn-sm( href='#' ) Sing Out
+									a.btn.btn-sm.btn-light( href='#' ) Upgrade Plan
+
+				.rd-navbar-panel-cell
+					button.btn.btn-navbar-panel( data-multi-switch!={
+						targets: '.sidebar',
+						scope: '.sidebar',
+						isolate: '[data-multi-switch]'
+					} ): span.fa-sliders
+
+			.rd-navbar-sidebar.scroller.scroller-vertical
+				.rd-navbar-sidebar-panel
+					div
+						.group-15
+							.rd-navbar-brand
+								a.desktop-brand( href='index.html' ): img( src='images/logo-1-white-217x38.png', alt='' )
+								a.mobile-brand( href='index.html' ): img( src='images/logo-1-black-217x38.png', alt='' )
+							.rd-navbar-sidebar-search 
+								input.form-control( type='text', placeholder='Search' ) 
+					button.btn.rd-navbar-sidebar-toggle( data-navigation-switch= true ): span.fa-bars
+
+				+navigation( menu )

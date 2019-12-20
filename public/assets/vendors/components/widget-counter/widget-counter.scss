@@ -1,0 +1,122 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+// Widget counter simple
+.widget-counter-simple,
+.widget-counter-simple-fill {
+	position: relative;
+	padding: px-to-rem( 15px, 20px );
+	overflow: hidden;
+
+	.widget-counter-text {
+		color: $text-muted;
+	}
+
+	.widget-counter-icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 100px;
+		line-height: 1;
+	}
+}
+
+@each $color, $value in $theme-colors {
+	.widget-counter-simple-#{$color} {
+		color: $value;
+	}
+
+	.widget-counter-simple-#{$color}-fill {
+		background-color: $value;
+		color: color-yiq( $value );
+
+		.widget-counter-text {
+			color: color-yiq( rgba( $value, .8 ) );
+		}
+	}
+}
+
+// Widget counter boxed
+.widget-counter-boxed {
+	text-align: center;
+	background-color: $white;
+	border: 1px solid $gray-200;
+
+	.widget-counter-text {
+		text-transform: uppercase;
+	}
+
+	.widget-counter-text,
+	.widget-counter-footer-icon {
+		color: $success;
+	}
+
+	.widget-counter-body {
+		padding: px-to-rem( 35px, 20px, 20px );
+	}
+
+	.widget-counter-footer {
+		padding: px-to-rem( 15px, 20px );
+		border-top: 1px solid $gray-200;
+		text-transform: uppercase;
+	}
+
+	.widget-counter-icon {
+		font-size: 4rem;
+		line-height: 1;
+		opacity: .6;
+	}
+
+	.widget-counter-icon-rounded {
+		display: inline-block;
+		width: 5rem;
+		height: 5rem;
+		font-size: 3rem;
+		line-height: 5rem;
+		border-radius: 50%;
+		background-color: rgba( $body-color, .1 );
+	}
+}
+
+* + .widget-counter-text { margin-top: px-to-rem( 7px ); }
+* + .widget-counter-title { margin-top: px-to-rem( 7px ); }
+.widget-counter-icon-rounded + .widget-counter-title { margin-top: px-to-rem( 15px ); }
+
+[class*='widget-counter-boxed-'] {
+	.widget-counter-footer {
+		border-top: 0;
+	}
+
+	.widget-counter-text,
+	.widget-counter-footer-icon {
+		color: inherit;
+	}
+}
+
+@each $color, $value in $theme-colors {
+	.widget-counter-boxed-#{$color} {
+		color: color-yiq( $value );
+		background-color: $value;
+		border-color: transparent;
+
+		.widget-counter-footer {
+			background-color: darken( $value, 10% );
+		}
+
+		.widget-counter-icon-rounded {
+			background-color: darken( $value, 10% );
+		}
+
+		.widget-counter-footer-dark {
+			color: $body-color;
+			background-color: $gray-200;
+
+			.widget-counter-footer-icon {
+				color: $value;
+			}
+		}
+	}
+}

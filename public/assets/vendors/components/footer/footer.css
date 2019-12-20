@@ -1,0 +1,2 @@
+.footer-small {	padding: 0.625rem 0.9375rem;	background-color: #fafafa;	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);}@media (min-width: 1200px) {	.rd-navbar-fixed-linked .footer-small {		position: fixed;		bottom: 0;		left: 0;		right: 0;		z-index: 2;		transition: .2s ease-in-out;	}	.rd-navbar-fixed-linked .footer-small {		left: 60px;	}	.rd-navbar-sidebar-active .footer-small {		left: 250px;	}}
+/*# sourceMappingURL=footer.css.map */

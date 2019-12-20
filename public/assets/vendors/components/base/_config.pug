@@ -1,0 +1,514 @@
+-
+	var
+		logo = {
+			default: 'logo-1-white-217x38.png',
+			name: 'Emerald'
+		},
+		menu = [
+			{ heading: 'Menu' }, 
+			{
+				title: 'Dashboard',
+				link: 'index.html',
+				icon: 'fa-home'
+			},
+			{
+				title: 'Calendar',
+				icon: 'fa-calendar'
+			},
+			{
+				title: 'Documentation',
+				icon: 'fa-book',
+				dropdown: [
+					{
+						title: 'Bootstrap Components',
+						link: 'documentation.html#bootstrap-components',
+						dropdown: [
+							{
+								title: 'Button',
+								link: 'documentation.html#button'
+							},
+							{
+								title: 'Badge',
+								link: 'documentation.html#badge'
+							},
+							{
+								title: 'Code',
+								link: 'documentation.html#code'
+							},
+							{
+								title: 'Media Object',
+								link: 'documentation.html#media'
+							},
+							{
+								title: 'Card',
+								link: 'documentation.html#card'
+							},
+							{
+								title: 'Table',
+								link: 'documentation.html#table'
+							},
+							{
+								title: 'Progress',
+								link: 'documentation.html#progress'
+							},
+							{
+								title: 'Close',
+								link: 'documentation.html#close'
+							},
+							{
+								title: 'Pagination',
+								link: 'documentation.html#pagination'
+							},
+							{
+								title: 'Alert',
+								link: 'documentation.html#alert'
+							},
+							{
+								title: 'Dropdown',
+								link: 'documentation.html#dropdown'
+							},
+							{
+								title: 'Nav',
+								link: 'documentation.html#nav'
+							},
+							{
+								title: 'Tooltip',
+								link: 'documentation.html#tooltip'
+							},
+							{
+								title: 'Modal',
+								link: 'documentation.html#modal'
+							},
+							{
+								title: 'Jumbotron',
+								link: 'documentation.html#jumbotron'
+							},
+							{
+								title: 'Input',
+								link: 'documentation.html#input'
+							}
+						]
+					},
+					{
+						title: 'Plugins',
+						link: 'documentation.html#plugins',
+						dropdown: [
+							{
+								title: 'Nprogress',
+								link: 'documentation.html#Nprogress'
+							},
+							{
+								title: 'Highlight.js',
+								link: 'documentation.html#highlight'
+							},
+							{
+								title: 'Dual Listbox',
+								link: 'documentation.html#dual-listbox'
+							},
+							{
+								title: 'Bootstrap Maxlength',
+								link: 'documentation.html#maxlength'
+							},
+							{
+								title: 'Typeahead.js',
+								link: 'documentation.html#typeahead'
+							},
+							{
+								title: 'Select2',
+								link: 'documentation.html#select2'
+							},
+							{
+								title: 'jQuery UI Spinner',
+								link: 'documentation.html#spinner'
+							},
+							{
+								title: 'Time Spinner',
+								link: 'documentation.html#time-spinner'
+							},
+							{
+								title: 'Date Range Picker',
+								link: 'documentation.html#daterangepiker'
+							},
+							{
+								title: 'Bootstrap Date/Timepicker',
+								link: 'documentation.html#datetimepicker'
+							},
+							{
+								title: 'Tags Manager',
+								link: 'documentation.html#tag-manager'
+							},
+							{
+								title: 'Bootstrap Colorpicker',
+								link: 'documentation.html#colorpicker'
+							},
+							{
+								title: 'jQuery Masked Input',
+								link: 'documentation.html#maskedinput'
+							},
+							{
+								title: 'CKeditor',
+								link: 'documentation.html#ckeditor'
+							},
+							{
+								title: 'Summernote',
+								link: 'documentation.html#summernote'
+							},
+							{
+								title: 'Markdown.js',
+								link: 'documentation.html#markdown'
+							},
+							{
+								title: 'Nestable jQuery Plugin',
+								link: 'documentation.html#nestable'
+							},
+							{
+								title: 'jsTree',
+								link: 'documentation.html#jstree'
+							},
+							{
+								title: 'Cropper.js',
+								link: 'documentation.html#cropper'
+							},
+							{
+								title: 'Tower File Input',
+								link: 'documentation.html#fileupload'
+							},
+							{
+								title: 'EasyZoom',
+								link: 'documentation.html#easyzoom'
+							},
+							{
+								title: 'xZoom',
+								link: 'documentation.html#xzoom'
+							},
+							{
+								title: 'Slick Slider',
+								link: 'documentation.html#slick'
+							},
+							{
+								title: 'DropzoneJS',
+								link: 'documentation.html#dropzone'
+							},
+							{
+								title: 'PNotify',
+								link: 'documentation.html#pnotify'
+							},
+							{
+								title: 'Driver.js',
+								link: 'documentation.html#driver'
+							},
+							{
+								title: 'αCountdown',
+								link: 'documentation.html#countdown'
+							},
+							{
+								title: 'αCounter & αProgressCircle',
+								link: 'documentation.html#progress-circle'
+							},
+							{
+								title: 'Particles.js',
+								link: 'documentation.html#particles'
+							},
+							{
+								title: 'Lightgallery',
+								link: 'documentation.html#lightgallery'
+							},
+							{
+								title: 'jVectorMap',
+								link: 'documentation.html#jvectormap'
+							},
+							{
+								title: 'Flot',
+								link: 'documentation.html#flotchart'
+							},
+							{
+								title: 'RD Navbar',
+								link: 'documentation.html#rd-navbar'
+							},
+							{
+								title: 'Highcharts',
+								link: 'documentation.html#highcharts'
+							},
+							{
+								title: 'MultiSwitch',
+								link: 'documentation.html#multiswitch'
+							}
+						]
+					}
+				]
+			},
+			{ heading: 'Theme tools' },
+			{
+				title: 'Admin plugins',
+				link: '#',
+				icon: 'fa-fire',
+				dropdown: [
+					{
+						title: 'Admin panels',
+						icon: 'fa-book'
+					},
+					{
+						title: 'Admin modals',
+						icon: 'fa-window-maximize'
+					},
+					{
+						title: 'Admin Dock',
+						icon: 'fa-wpforms'
+					}
+				]
+			},
+			{
+				title: 'Admin layouts',
+				link: '#',
+				icon: 'fa-columns',
+				dropdown: [
+					{
+						title: 'Navbar',
+						icon: 'mdi-file-presentation-box'
+					},
+					{
+						title: 'Topbar',
+						link: '#',
+						icon: 'mdi-file-presentation-box',
+						dropdown: [
+							{ title: 'Breadcrumbs' },
+							{ title: 'Topbar Menu' }
+						]
+					},
+					{
+						title: 'Content Body',
+						link: '#',
+						icon: 'mdi-file-presentation-box',
+						dropdown: [
+							{ title: 'Blank Starter' },
+							{ title: 'Jumbotron' },
+							{ title: 'Content Tabs' }
+						]
+					}
+				]
+			},
+
+			{ heading: 'Systems' },
+			{
+				title: 'Information Panels',
+				link: '#',
+				icon: 'fa-diamond',
+				dropdown: [
+					{
+						title: 'Tile Widgets',
+						icon: 'fa-cube'
+					},
+					{
+						title: 'Panel Widgets',
+						icon: 'fa-desktop'
+					},
+					{
+						title: 'Admin Widgets',
+						icon: 'fa-dot-circle-o'
+					}
+				]
+			},
+			{
+				title: 'Ecommerce',
+				link: '#',
+				icon: 'fa-shopping-cart',
+				dropdown: [
+					{
+						title: 'Ecommerce dashboard',
+						icon: 'fa-shopping-cart'
+					},
+					{
+						title: 'Products',
+						icon: 'fa-tags'
+					},
+					{
+						title: 'Orders',
+						icon: 'fa-money'
+					},
+					{
+						title: 'Customers',
+						icon: 'fa-users'
+					},
+					{
+						title: 'Store Settings',
+						icon: 'fa-cogs'
+					}
+				]
+			},
+			{ heading: 'Elements' },
+			{
+				title: 'UI Elements',
+				link: '#',
+				icon: 'fa-bell',
+				dropdown: [
+					{
+						title: 'Alerts',
+						icon: 'fa-exclamation-triangle'
+					},
+					{
+						title: 'Animations',
+						icon: 'fa-spinner'
+					},
+					{
+						title: 'Buttons',
+						icon: 'fa-square-o'
+					},
+					{
+						title: 'Typography',
+						icon: 'fa-text-width'
+					},
+					{
+						title: 'Panel',
+						icon: 'fa-archive'
+					},
+					{
+						title: 'Progress Bars',
+						icon: 'fa-archive'
+					},
+					{
+						title: 'Tabs',
+						icon: 'fa-toggle-off'
+					},
+					{
+						title: 'Icons',
+						icon: 'fa-puzzle-piece'
+					},
+					{
+						title: 'Grid',
+						icon: 'fa-th-large'
+					}
+				]
+			},
+			{
+				title: 'Form Elements',
+				link: '#',
+				icon: 'fa-hdd-o',
+				dropdown: [
+					{
+						title: 'Basic Inputs',
+						icon: 'fa-magic'
+					},
+					{
+						title: 'Plugin Inputs',
+						icon: 'fa-bell-o'
+					},
+					{
+						title: 'Editors',
+						icon: 'fa-clipboard'
+					},
+					{
+						title: 'Treeview',
+						icon: 'fa-tree'
+					},
+					{
+						title: 'Nestable',
+						icon: 'fa-tasks'
+					},
+					{
+						title: 'Image tools',
+						icon: 'fa-image'
+					},
+					{
+						title: 'Uploaders',
+						icon: 'fa-cloud-upload'
+					},
+					{
+						title: 'Notifications',
+						icon: 'fa-bell-o'
+					},
+					{
+						title: 'Content Sliders',
+						icon: 'fa-exchange'
+					}
+				]
+			},
+			{
+				title: 'Plugins',
+				link: '#',
+				icon: 'fa-code',
+				dropdown: [
+					{
+						title: 'Maps',
+						link: '#',
+						icon: 'fa-globe',
+						dropdown: [
+							{ title: 'Google Maps' },
+							{ title: 'jVector Map' }
+						]
+					},
+					{
+						title: 'Charts',
+						link: '#',
+						icon: 'fa-area-chart',
+						dropdown: [
+							{ title: 'Highcharts' },
+							{ title: 'Flotcharts' }
+						]
+					},
+					{
+						title: 'Tables',
+						link: '#',
+						icon: 'fa-table',
+						dropdown: [
+							{ title: 'Basic Tables' },
+							{ title: 'Data Tables' },
+							{ title: 'Pricing Tables' }
+						]
+					},
+					{
+						title: 'Misc',
+						link: '#',
+						icon: 'fa-flask',
+						dropdown: [
+							{ title: 'Site Tour' },
+							{ title: 'Session Timeout' },
+							{ title: 'Page Progress Loader' }
+						]
+					}
+				]
+			},
+			{
+				title: 'Pages',
+				link: '#',
+				icon: 'fa-file-o',
+				dropdown: [
+					{
+						title: 'Utility',
+						link: '#',
+						icon: 'fa-cogs',
+						dropdown:[
+							{ title: 'Confirmation' },
+							{ title: 'Login' },
+							{ title: 'Register' },
+							{ title: 'Screenlock' },
+							{ title: 'Password Reset' },
+							{ title: 'Coming Soon' },
+							{ title: '404' },
+							{ title: '500' }
+						]
+					},
+					{
+						title: 'Basic',
+						link: '#',
+						icon: 'fa-desktop',
+						dropdown: [
+							{ title: 'Search Results' },
+							{ title: 'Profile' },
+							{ title: 'Timeline' },
+							{ title: 'FAQ' },
+							{ title: 'Calendar' },
+							{ title: 'Messages' },
+							{ title: 'Messages Compose' },
+							{ title: 'Gallery' },
+							{ title: 'Printable Invoice' }
+						]
+					}
+				]
+			}
+		],
+
+		homePage = menu[1],
+		pageName = homePage.title,
+		pageClass = null,
+		htmlClass = [ 'rd-navbar-sidebar-active' ],
+		breadcrumbs = [];

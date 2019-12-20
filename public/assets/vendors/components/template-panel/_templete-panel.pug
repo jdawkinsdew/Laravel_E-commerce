@@ -1,0 +1,84 @@
+.template-panel
+	.template-panel-heading Template Panel
+		button.template-panel-switch.fa-cog( data-multi-switch!={ targets: '.template-panel', scope: '.template-panel', isolate: '[data-multi-switch]' } )
+	.template-panel-body
+		.template-panel-group
+			button.theme-switch.fa-check.active(
+				title='Navbar Theme',
+				style='border-color: #00c3aa #00c3aa #fff #fff; color: black;',
+				data-theme-switch='emerald-navbar-primary'
+				data-theme!={
+					'navbar-color':        '#797b7c',
+					'navbar-bg':           '#fff',
+					'navbar-hover-color':  '#797b7c',
+					'navbar-hover-bg':     '#f5f5f5',
+					'navbar-active-color': '#fff',
+					'navbar-active-bg':    '#00c3aa',
+					'navbar-panel-color':  '#fff',
+					'navbar-panel-bg':     '#00c3aa',
+					'navbar-title-color':  '#797b7c',
+					'navbar-brand-invert': '0%'
+				}
+			)
+
+			button.theme-switch.fa-check(
+				title='Navbar Theme',
+				style='border-color: #4d8dce #4d8dce #fff #fff; color: black;',
+				data-theme-switch='emerald-navbar-secondary'
+				data-theme!={
+					'navbar-color':        '#797b7c',
+					'navbar-bg':           '#fff',
+					'navbar-hover-color':  '#797b7c',
+					'navbar-hover-bg':     '#f5f5f5',
+					'navbar-active-color': '#fff',
+					'navbar-active-bg':    '#4d8dce',
+					'navbar-panel-color':  '#fff',
+					'navbar-panel-bg':     '#4d8dce',
+					'navbar-title-color':  '#797b7c',
+					'navbar-brand-invert': '0%'
+				}
+			)
+
+			button.theme-switch.fa-check(
+				title='Navbar Theme',
+				style='border-color: #9b82e8 #9b82e8 #fff #fff; color: black;',
+				data-theme-switch='emerald-navbar-tertiary'
+				data-theme!={
+					'navbar-color':        '#797b7c',
+					'navbar-bg':           '#fff',
+					'navbar-hover-color':  '#797b7c',
+					'navbar-hover-bg':     '#f5f5f5',
+					'navbar-active-color': '#fff',
+					'navbar-active-bg':    '#9b82e8',
+					'navbar-panel-color':  '#fff',
+					'navbar-panel-bg':     '#9b82e8',
+					'navbar-title-color':  '#797b7c',
+					'navbar-brand-invert': '0%'
+				}
+			)
+
+			button.theme-switch.fa-check(
+				title='Navbar Theme',
+				style='border-color: #fb6820 #fb6820 #fff #fff; color: black;',
+				data-theme-switch='emerald-navbar-danger'
+				data-theme!={
+					'navbar-color':        '#797b7c',
+					'navbar-bg':           '#fff',
+					'navbar-hover-color':  '#797b7c',
+					'navbar-hover-bg':     '#f5f5f5',
+					'navbar-active-color': '#fff',
+					'navbar-active-bg':    '#fb6820',
+					'navbar-panel-color':  '#fff',
+					'navbar-panel-bg':     '#fb6820',
+					'navbar-title-color':  '#797b7c',
+					'navbar-brand-invert': '0%'
+				}
+			)
+
+		ul.template-panel-list
+			- for ( var i = 0; i < global.bundleTemplates.length; i++ )
+				- var template = global.bundleTemplates[i];
+				ul.template-panel-item
+					a.template-panel-link( href= template.link, class= {active: logo.name === template.name} )= template.name
+						span.template-panel-popup
+							img.template-panel-preview( src= template.preview )

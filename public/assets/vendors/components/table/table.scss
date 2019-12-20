@@ -1,0 +1,35 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+
+$table-accent-bg: $gray-100;
+
+$table-cell-padding-sm: 0.5rem;
+
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/tables";
+
+// Base
+.table {
+	margin-bottom: 0;
+}
+
+// Modifies
+.table-vertical-align {
+	td, th {
+		vertical-align: middle;
+	}
+}
+
+.table-align-1 {
+	th:nth-child( 1 ),
+	td:nth-child( 1 ){
+		text-align: center;
+	}
+}
+
+// Data table context
+.data-table {
+	width: 100% !important;
+}

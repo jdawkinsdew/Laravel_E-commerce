@@ -1,0 +1,139 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+
+// Variables
+$progress-height: px-to-rem( 18px );
+$progress-bg: $gray-300;
+$progress-border-radius: $rounded-pill;
+
+$progress-height-sm: $progress-height * 0.75;
+$progress-font-size-sm: $progress-font-size * 0.75;
+
+$progress-height-lg: $progress-height * 1.5;
+$progress-font-size-lg: $progress-font-size * 1.5;
+
+@import "../bootstrap/scss/_mixins";
+@import "../bootstrap/scss/_progress";
+
+// Progress size
+.progress-sm {
+	height: $progress-height-sm;
+	font-size: $progress-font-size-sm;
+}
+
+.progress-lg {
+	height: $progress-height-lg;
+	font-size: $progress-font-size-lg;
+}
+
+// Progress vertical
+.progress-vertical {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	min-height: px-to-rem( 200px );
+	width: px-to-rem( 24px );
+	vertical-align: middle;
+}
+
+// Offsets
+* + .progress {
+	margin-top: px-to-rem( 15px );
+}
+
+* + .progress-vertical {
+	margin-top: 0;
+}
+
+// Color themes
+@each $color, $value in $theme-colors {
+	.progress-#{$color} {
+		background-color: $value;
+		color: color-yiq( $value );
+	}
+
+	.progress-#{$color}-darker {
+		background-color: darken( $value, 10% );
+		color: color-yiq( darken( $value, 10% ) );
+	}
+
+	.progress-#{$color}-lighter {
+		background-color: lighten( $value, 10% );
+		color: color-yiq( lighten( $value, 10% ) );
+	}
+}
+
+.progress-wrap-1 {
+	position: relative;
+	z-index: 1;
+
+	.progress-wrap-content {
+		padding-right: px-to-rem( 35px );
+		@include text-truncate();
+	}
+
+	.progress {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		z-index: -1;
+		justify-content: flex-end;
+		height: $progress-height-lg;
+		font-weight: 700;
+		background-color: transparent;
+		transform: translateY( -50% );
+		border-radius: 0;
+		pointer-events: none;
+
+		.progress-bar {
+			align-items: flex-end;
+			padding-right: px-to-rem( 5px );
+		}
+	}
+
+	.progress-200 {
+		background-color: $gray-200;
+		color: $body-color;
+	}
+
+	* + .progress {
+		margin-top: 0;
+	}
+
+	@include media-breakpoint-up( xl ) {
+		.progress {
+			font-size: $font-size-base;
+
+			.progress-bar {
+				padding-right: px-to-rem( 15px );
+			}
+		}
+	}
+}
+
+.progress-multiple-wrap {
+	* + .h4 { margin-top: px-to-rem( 5px ); }
+	* + .progress { margin-top: px-to-rem( 8px ); }
+}
+
+h2 + .progress-multiple-wrap {
+	margin-top: px-to-rem( 20px );
+}
+
+.progress-multiple-wrap + .progress-multiple-wrap {
+	margin-top: px-to-rem( 15px );
+}
+
+// Mega large ≥1600px
+@include media-breakpoint-up(xxl) {
+	h2 + .progress-multiple-wrap {
+		margin-top: px-to-rem( 30px );
+	}
+
+	.progress-multiple-wrap + .progress-multiple-wrap {
+		margin-top: px-to-rem( 25px );
+	}
+}

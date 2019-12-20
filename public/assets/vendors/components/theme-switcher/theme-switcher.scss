@@ -1,0 +1,42 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins/group";
+@import "functions";
+@import "mixins";
+
+
+// Base
+.theme-switch {
+	position: relative;
+	display: block;
+	border: 13px solid;
+	border-color: $gray-700 $gray-700 $white $white;
+	border-radius: $border-radius-sm;
+	font-size: px-to-rem( 17px );
+	line-height: 1;
+	background: none;
+	color: $white;
+
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-shadow: 0 0 3px rgba($black,.3);
+		opacity: 0;
+		transition: .2s;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&.active {
+		&::before {
+			opacity: 1;
+		}
+	}
+}

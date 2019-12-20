@@ -1,0 +1,39 @@
+@function cssv ( $color ) {
+	@return var( --#{$color} );
+}
+
+@function cssv-rgba ( $color, $alpha: 1 ) {
+	@return rgba(
+			var( --#{$color}-r ),
+			var( --#{$color}-g ),
+			var( --#{$color}-b ),
+			$alpha
+	);
+}
+
+@function cssv-hsla ( $color, $alpha: 1 ) {
+	@return hsla(
+			var( --#{$color}-h ),
+			var( --#{$color}-s ),
+			var( --#{$color}-l ),
+			$alpha
+	);
+}
+
+@function cssv-lighten ( $color, $lightness: 0, $alpha: 1 ) {
+	@return hsla(
+			var( --#{$color}-h ),
+			var( --#{$color}-s ),
+			calc( var( --#{$color}-l ) + #{$lightness} ),
+			$alpha
+	);
+}
+
+@function cssv-darken ( $color, $lightness: 0, $alpha: 1 ) {
+	@return hsla(
+			var( --#{$color}-h ),
+			var( --#{$color}-s ),
+			calc( var( --#{$color}-l ) - #{$lightness} ),
+			$alpha
+	);
+}

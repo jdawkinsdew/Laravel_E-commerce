@@ -1,0 +1,2 @@
+.breadcrumbs {	display: flex;	flex-wrap: wrap;	padding: 0 1.25rem;	list-style: none;}.breadcrumbs-item {	flex-shrink: 0;}.breadcrumbs-item:not(:first-child) {	position: relative;	padding-left: 20px;}.breadcrumbs-item:not(:first-child)::before {	content: '>';	position: absolute;	left: 0.4375rem;}.breadcrumbs-icon {	margin-right: 0.1875rem;}
+/*# sourceMappingURL=breadcrumbs.css.map */

@@ -1,0 +1,2 @@
+.icon-box {	display: block;	padding: 0.9375rem 1.25rem;	color: #bcbdbd;	background-color: #f5f5f5;	border: 2px dashed #d5d5d5;	cursor: pointer;	transition: .2s;}.icon-box:hover, .icon-box:focus {	border-color: #999999;}.icon-box.active {	background-color: #fff;}.icon-box:hover .icon-box-icon, .icon-box:focus .icon-box-icon, .icon-box.active .icon-box-icon {	color: #6fbb47;}.icon-box * + p {	margin-top: 0.5rem;}.icon-box-icon {	font-size: 2.5rem;	line-height: 1;	transition: .2s;}
+/*# sourceMappingURL=icon-box.css.map */

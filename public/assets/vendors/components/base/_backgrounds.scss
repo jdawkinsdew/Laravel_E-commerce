@@ -1,0 +1,19 @@
+// gray backgrounds
+
+@each $color, $value in $grays {
+	@include bg-variant(".bg-#{$color}", $value);
+}
+
+.bg-lighter {
+	background-color: lighten( $gray-100, 2% );
+}
+
+// Image background
+.bg-image {
+	background-position: center center;
+	background-size: cover;
+}
+
+.bg-line-gradient {
+	background: transparent repeating-linear-gradient(-45deg, $white, $white 3px, lighten( $gray-100, 2% ) 3px, lighten( $gray-100, 2% ) 6px) repeat scroll 0% 0%;
+}

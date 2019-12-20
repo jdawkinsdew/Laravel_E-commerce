@@ -1,0 +1,80 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/media";
+
+// Offsets
+* + .media {
+	margin-top: 20px;
+}
+
+// Media cloud
+.media-cloud {
+	.media-heading {
+		position: relative;
+		padding-left: 0.9em;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: px-to-rem( 4px );
+			left: 0;
+			width: 0.55em;
+			height: 0.55em;
+			border-radius: 50%;
+			background-color: $gray-300;
+		}
+
+		&.online {
+			&:before {
+				background-color: $success;
+			}
+		}
+
+		&.offline {
+			&:before {
+				background-color: $danger;
+			}
+		}
+	}
+
+	.media-body {
+		position: relative;
+		padding: px-to-rem( 15px );
+		background-color: $white;
+		border: 1px solid $gray-300;
+
+		&:before,
+		&:after {
+			position: absolute;
+			content: '';
+			left: -5px;
+			top: 13px;
+			width: 12px;
+			height: 12px;
+			background: $white;
+			transform: rotate(45deg);
+		}
+
+		&:before {
+			left: -6px;
+			border: 1px solid $gray-300;
+		}
+
+		&-right-caret {
+			&:before,
+			&:after {
+				right: -5px;
+				left: auto;
+			}
+
+			&:before {
+				right: -6px;
+			}
+		}
+	}
+
+	* + .media-text { margin-top: px-to-rem( 5px ); }
+}

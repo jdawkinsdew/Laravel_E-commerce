@@ -1,0 +1,12 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/card";
+
+// Spacing
+* + .card,
+.card + * {
+	margin-top: 16px;
+}

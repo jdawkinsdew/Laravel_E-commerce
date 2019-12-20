@@ -1,0 +1,14 @@
+@mixin cssv-init( $name, $value ) {
+	:root {
+		--#{$name}: #{ $value };
+
+		@if ( type-of( $value ) == color ) {
+			--#{$name}-r: #{ red( $value ) };
+			--#{$name}-g: #{ green( $value ) };
+			--#{$name}-b: #{ blue( $value ) };
+			--#{$name}-h: #{ hue( $value ) };
+			--#{$name}-s: #{ saturation( $value ) };
+			--#{$name}-l: #{ lightness( $value ) };
+		}
+	}
+}

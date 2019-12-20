@@ -1,0 +1,29 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+.sidebar {
+	position: fixed;
+	top: 60px;
+	bottom: 0;
+	right: 0;
+	transform: translateX( 101% );
+	z-index: $zindex-fixed;
+	width: 280px;
+	transition: transform .2s ease-in-out;
+	background: $gray-100;
+	overflow: hidden;
+	overflow-y: overlay;
+	box-shadow: $box-shadow;
+
+	&.active {
+		transform: translateX( 0 );
+	}
+}
+
+// Modifiers
+.sidebar-lg {
+	width: 320px;
+}

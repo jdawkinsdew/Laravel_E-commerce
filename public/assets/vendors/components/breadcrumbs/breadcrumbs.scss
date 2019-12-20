@@ -1,0 +1,31 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+.breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 px-to-rem( 20px );
+	list-style: none;
+}
+
+.breadcrumbs-item {
+	flex-shrink: 0;
+}
+
+.breadcrumbs-item:not(:first-child) {
+	position: relative;
+	padding-left: 20px;
+
+	&::before {
+		content: '>';
+		position: absolute;
+		left: px-to-rem( 7px );
+	}
+}
+
+.breadcrumbs-icon {
+	margin-right: px-to-rem( 3px );
+}
