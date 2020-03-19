@@ -1,10 +1,9 @@
-Get your local Git repository on Bitbucket
-
+Get your local Git repository on Github
 Step 1: Switch to your repository's directory
 
 cd /path/to/your/repo
 
-Step 2: Connect your existing repository to Bitbucket
+Step 2: Connect your existing repository to Github
 
 git remote add origin https://lovecoding714@bitbucket.org/lovecoding714/larametro-template.git
 git push -u origin master
