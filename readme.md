@@ -5,7 +5,7 @@ cd /path/to/your/repo
 
 Step 2: Connect your existing repository to Github
 
-git remote add origin https://lovecoding714@bitbucket.org/lovecoding714/larametro-template.git
+git remote add origin https://github.com/Excellent-coding/Laravel_E-commerce.git
 git push -u origin master
 
 necessary git commands
